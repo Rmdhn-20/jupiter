@@ -1,16 +1,14 @@
 # Use the latest Ubuntu image
 FROM ubuntu:20.04
 
-# Update and install required packages
-RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip
-
 # Set the working directory
 WORKDIR /app
 
-# Install JupyterLab
-RUN pip install jupyterlab
+# Update and install required packages
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    pip3 install jupyterlab
 
 # Expose port 8080
 EXPOSE 8080
